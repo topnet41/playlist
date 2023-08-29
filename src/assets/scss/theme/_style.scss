@@ -1,0 +1,122 @@
+body {
+    background-color: #f6f7f9;
+    overflow-x: hidden;
+    font-family: "Krub";
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 22px;
+    color: #476282;
+}
+
+.datatable-row-detail {
+  height: 100% !important;
+  padding: 0 40px !important;
+}
+
+.form-search { 
+
+	.input-icon-search { 
+        position: relative;
+		i { 
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            cursor: pointer;
+		}
+
+		.form-control { 
+            margin: 0;
+            overflow: visible;
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: .813rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            outline: initial!important;
+            background: #f8f9fa;
+            border: 1px solid #ced4da;
+            color: #3d4f9e;
+            height: 39px;
+            max-height: max-content;
+            padding-right: 40px;
+		}
+	}
+}
+
+.text-red{
+  color: red;
+}
+
+  .shimmer {
+    // color: grey;
+    display:inline-block;
+    -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 2.5s infinite;
+    // font-size: 50px;
+    // max-width:200px;
+  }
+
+  .loading-refresh{
+    animation: refresh 1.5s infinite;
+  }
+
+  .refresh{
+    transform: rotateZ(2deg)
+  }
+
+  @keyframes refresh {
+    100% {transform: rotateZ(365deg);}
+  }
+  
+  @keyframes shimmer {
+    100% {-webkit-mask-position:left}
+  }
+  
+  .ngx-datatable.material .datatable-header .datatable-header-cell{
+    text-align: center;
+  }
+
+  .ngx-datatable .datatable-body .datatable-body-row>div{
+    align-items: center;
+  }
+  
+  .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell{
+    text-align: center;
+  }
+
+  .datatable-row-detail{
+    padding: 0 85px !important;
+  }
+
+  .col{
+    padding-right: 0;
+  }
+
+  .text-align{
+    text-align: center;
+  }
+
+  .primary{
+    color: green;
+    border-color: green;
+  }
+  .table th, .table td{
+    border-top: 0;
+  }
+  .table thead th{
+    border-bottom: 0;
+  }
+  .ngx-datatable.material{ 
+    .datatable-header {
+      .datatable-header-cell{
+        font-size: 19px;
+        color: #000;
+  }}}

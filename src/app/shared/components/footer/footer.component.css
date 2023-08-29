@@ -1,0 +1,9 @@
+footer{
+    border-top: 1px solid #ddd;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    color: #007bff!important;
+}

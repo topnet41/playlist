@@ -1,0 +1,43 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ data.title }}
+        <p class="text-muted m-0" style="font-size: 12px;">เครื่องหมาย <span class="text-red">*</span> คือจำเป็นต้องใส่
+        </p>
+    </h4>
+    <button type="button" class="btn btn-close" aria-label="Close" (click)="modal.dismiss()">X</button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="form" (submit)="false" *ngIf="!loading">
+        <label for="desc">Brand (ยี่ห้อ) <span class="text-red">*</span></label>
+        <input type="text" class="form-control" name="desc" id="desc" formControlName="desc">
+        <div class="py-2"></div>
+        <div class="row">
+            <div class="col-4 col-md-3 pr-0">
+                <label for="prefix">ทะเบียนรถ <span class="text-red">*</span></label>
+                <input type="text" class="form-control" name="prefix" id="prefix" formControlName="prefix">
+            </div>
+            <div class="col-8 col-md-9">
+                <label for="number" style="visibility: hidden;"> .</label>
+                <input type="text" class="form-control" name="number" id="number" formControlName="number">
+            </div>
+        </div>
+        <div class="py-2"></div>
+        <label class="d-block">จังหวัด <span class="text-red">*</span></label>
+        <div class="row m-0" style="gap: 10px;">
+           <select class="form-control" formControlName="provinces">
+                <option value="">เลือกจังหวัด</option>
+                <option *ngFor="let item of provinces" [value]="item">{{ item }}</option>
+           </select>
+        </div>
+        <div class="py-2"></div>
+        <label class="d-block">วันที่ต่อภาษี/วันที่หมด <span class="text-red">*</span></label>
+        <div class="row m-0" style="gap: 10px;">
+            <input type="date" class="form-control col-5" name="date_start" id="date_start" formControlName="date_start"
+                (change)="changeDate($event)">
+            <input type="date" class="form-control col-5" name="date_end" id="date_end" formControlName="date_end">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" *ngIf="!loading" class="btn btn-outline-dark" [disabled]="form.invalid" (click)="submit()">{{
+        data['isNew'] ? "บันทึก" : "เพิ่มรถ" }}</button>
+</div>
